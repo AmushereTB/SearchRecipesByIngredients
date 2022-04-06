@@ -102,53 +102,109 @@ const RecipeDetail = () => {
         } = recipe;
         return (
             <section className="recipe-section">
-                <button className="btn btn-primary" onClick={ clickHandler }>
-                    Add Favorite
-                </button>
-                <h2 className="section-title">{name}</h2>
-                <div className="single-recipe">
-                    <img src={image} alt={name} />
-                    <div className="single-recipe-info">
-                        <p>
-                            <span className="display-info">name:</span> {name}
-                        </p>
-                        <p>
-                            <span className="display-info">category:</span> {category}
-                        </p>
-                        <p>
-                            <span className="display-info">country:</span> {location}
-                        </p>
-                        <p>
-                            <span className="display-info">tags:</span> {tags ? tags : "meal"}
-                        </p>
-                        <p>
-                            <span className="display-info">ingredients:</span>
-                            {ingredients.map((ingredient, index) => {
-                                if (index === ingredients.length - 1) {
-                                    return ingredient ? (
-                                        <span key={index}> {ingredient}</span>
-                                    ) : null;
-                                }
-                                return ingredient ? (
-                                    <span key={index}> {ingredient},</span>
-                                ) : null;
-                            })}
-                        </p>
-                        <p>
-                            <span className="display-info">instruction:</span>
-                            {readMore ? instruction : `${instruction.substring(0, 300)}...`}
-                            <button onClick={() => setReadMore(!readMore)}>
-                                {readMore ? "show less" : "read more"}
-                            </button>
-                        </p>
-                    </div>
-                </div>
-                <article>
-                    <h2 className="section-title">Instruction</h2>
-                    <div className="instruction">
-                        <YoutubeEmbedded embedId={youtube.split("?v=")[1]} />
-                    </div>
-                </article>
+                {
+                    localStorage.getItem('loginData') ? 
+                (
+                    <>
+                     <button className="btn btn-primary" onClick={ clickHandler }>
+                        Add Favorite
+                     </button>
+                        <h2 className="section-title">{name}</h2>
+                        <div className="single-recipe">
+                            <img src={image} alt={name} />
+                            <div className="single-recipe-info">
+                                <p>
+                                    <span className="display-info">name:</span> {name}
+                                </p>
+                                <p>
+                                    <span className="display-info">category:</span> {category}
+                                </p>
+                                <p>
+                                    <span className="display-info">country:</span> {location}
+                                </p>
+                                <p>
+                                    <span className="display-info">tags:</span> {tags ? tags : "meal"}
+                                </p>
+                                <p>
+                                    <span className="display-info">ingredients:</span>
+                                    {ingredients.map((ingredient, index) => {
+                                        if (index === ingredients.length - 1) {
+                                            return ingredient ? (
+                                                <span key={index}> {ingredient}</span>
+                                            ) : null;
+                                        }
+                                        return ingredient ? (
+                                            <span key={index}> {ingredient},</span>
+                                        ) : null;
+                                    })}
+                                </p>
+                                <p>
+                                    <span className="display-info">instruction:</span>
+                                    {readMore ? instruction : `${instruction.substring(0, 300)}...`}
+                                    <button onClick={() => setReadMore(!readMore)}>
+                                        {readMore ? "show less" : "read more"}
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                        <article>
+                            <h2 className="section-title">Instruction</h2>
+                            <div className="instruction">
+                                <YoutubeEmbedded embedId={youtube.split("?v=")[1]} />
+                            </div>
+                        </article>
+                    </>
+                
+                ) : (
+                    <>
+                        <h2 className="section-title">{name}</h2>
+                        <div className="single-recipe">
+                            <img src={image} alt={name} />
+                            <div className="single-recipe-info">
+                                <p>
+                                    <span className="display-info">name:</span> {name}
+                                </p>
+                                <p>
+                                    <span className="display-info">category:</span> {category}
+                                </p>
+                                <p>
+                                    <span className="display-info">country:</span> {location}
+                                </p>
+                                <p>
+                                    <span className="display-info">tags:</span> {tags ? tags : "meal"}
+                                </p>
+                                <p>
+                                    <span className="display-info">ingredients:</span>
+                                    {ingredients.map((ingredient, index) => {
+                                        if (index === ingredients.length - 1) {
+                                            return ingredient ? (
+                                                <span key={index}> {ingredient}</span>
+                                            ) : null;
+                                        }
+                                        return ingredient ? (
+                                            <span key={index}> {ingredient},</span>
+                                        ) : null;
+                                    })}
+                                </p>
+                                <p>
+                                    <span className="display-info">instruction:</span>
+                                    {readMore ? instruction : `${instruction.substring(0, 300)}...`}
+                                    <button onClick={() => setReadMore(!readMore)}>
+                                        {readMore ? "show less" : "read more"}
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                        <article>
+                            <h2 className="section-title">Instruction</h2>
+                            <div className="instruction">
+                                <YoutubeEmbedded embedId={youtube.split("?v=")[1]} />
+                            </div>
+                        </article>
+                    </>
+                        )
+                }
+                    
             </section>
         );
     }
