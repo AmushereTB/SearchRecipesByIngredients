@@ -1,0 +1,60 @@
+.recipe {
+    background: var(--mainWhite);
+    box-shadow: var(--lightShadow);
+    transition: var(--mainTransition);
+    border-radius: var(--mainBorderRadius);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    margin-bottom: 2rem;
+}
+
+.recipe img {
+    height: 20rem;
+    object-fit: cover;
+    border-top-left-radius: var(--mainBorderRadius);
+    border-top-right-radius: var(--mainBorderRadius);
+}
+.recipe-footer {
+    margin-bottom: 2%;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.del,
+.del-primary {
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    color: var(--primaryDleteColor);
+    border: solid 2px var(--primaryDleteColor);
+    padding: 0.45rem 0.8rem;
+    display: inline-block;
+    transition: var(--mainTransition);
+    cursor: pointer;
+    font-size: 0.8rem;
+    background: transparent;
+    border-radius: var(--mainBorderRadius);
+}
+.del:hover {
+    background: var(--primaryDleteColor);
+    color: var(--mainWhite);
+}
+
+.del-primary {
+    background: var(--primaryDleteColor);
+    color: var(--mainWhite);
+    border-color: transparent;
+}
+.del-primary:hover {
+    background: var(--primaryLightColor);
+    color: var(--primaryDleteColor);
+}
+.del-detail {
+    padding: 0.25rem 0.4rem;
+}
+.del-detail:hover {
+    background: var(--primaryLightColor);
+    border-color: var(--primaryLightColor);
+}
