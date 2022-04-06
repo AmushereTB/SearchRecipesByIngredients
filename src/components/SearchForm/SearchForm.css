@@ -30,7 +30,7 @@
 }
 
 .input-control input {
-    width: 150%;
+    width: 100%;
     border: none;
     border-color: transparent;
     background: var(--mainBackground);
