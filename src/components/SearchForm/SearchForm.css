@@ -1,0 +1,50 @@
+.search {
+    margin-top: 1rem;
+    padding-bottom: 0;
+}
+.search-form {
+    width: var(--smallWidth);
+    max-width: var(--fullWidth);
+    margin: 0 auto;
+    background: var(--mainWhite);
+    padding: 2rem 2.5rem;
+    text-transform: capitalize;
+    border-radius: var(--mainBorderRadius);
+    box-shadow: var(--lightShadow);
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.25rem;
+    color: var(--primaryColor);
+}
+.input-control {
+    display: flex;
+    justify-content: space-between;
+}
+.input-control{
+    display: grid;
+    row-gap: 2rem;
+}
+
+.input-control input {
+    width: 150%;
+    border: none;
+    border-color: transparent;
+    background: var(--mainBackground);
+    border-radius: var(--mainBorderRadius);
+    padding: 0.8rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 576px) {
+    .input-control {
+        display: flex;
+        justify-content: space-between;
+    }
+    .input-control input {
+        width: 32%;
+    }
+}

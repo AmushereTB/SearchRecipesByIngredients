@@ -1,0 +1,61 @@
+.recipe-section {
+    margin: 5rem auto 0 auto;
+    text-align: center;
+}
+.single-recipe {
+    width: var(--smallWidth);
+    max-width: var(--fullWidth);
+    margin: 0 auto;
+    text-align: left;
+}
+.single-recipe img {
+    border-radius: var(--mainBorderRadius);
+    padding-top: 2rem;
+}
+.single-recipe p {
+    font-weight: bold;
+    text-transform: capitalize;
+    line-height: 1.8;
+}
+.single-recipe span {
+    margin-right: 0.5rem;
+}
+.single-recipe button {
+    background: transparent;
+    border-color: transparent;
+    text-transform: capitalize;
+    color: var(--lightDeColor);
+    font-size: 1rem;
+    cursor: pointer;
+    padding-left: 0.25rem;
+}
+.single-recipe-info {
+    padding-top: 2rem;
+}
+@media screen and (min-width: 992px) {
+    .single-recipe {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 3rem;
+        align-items: flex-start;
+        grid-auto-rows: 1fr;
+    }
+}
+.display-info {
+    background: var(--primaryLightColor);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--mainBorderRadius);
+    color: var(--primaryColor);
+}
+.instruction {
+    width: var(--smallWidth);
+    max-width: var(--fullWidth);
+    margin: 0 auto 5rem auto;
+    text-align: center;
+}
+@media screen and (min-width: 992px) {
+    .instruction {
+        align-items: center;
+        padding-top: 1.8rem;
+    }
+}

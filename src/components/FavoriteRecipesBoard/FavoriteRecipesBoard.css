@@ -1,0 +1,14 @@
+.recipe-list {
+    width: var(--smallWidth);
+    max-width: var(--fullWidth);
+    margin: 0 auto;
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 2rem;
+}
+
+@media screen and (min-width: 576px) {
+    .recipe-list {
+        grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
+    }
+}
