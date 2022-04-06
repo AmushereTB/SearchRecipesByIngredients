@@ -11,7 +11,7 @@ const ProfilePage = ({loginInfo} : Props) => {
     const [favoriteList, setFavoriteList] = useState<IRecipes[]>([]);
 
     const fetchFavoriteRecipes = async () => {
-        const response = await fetch(`https://localhost:7137/api/Users/${loginInfo?.googleId}`);
+        const response = await fetch(`https://recipe-backend.azurewebsites.net/api/Users/${loginInfo?.googleId}`);
         const data = await response.json();
         const { recipes } = data;
         if(recipes)

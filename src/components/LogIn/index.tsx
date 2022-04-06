@@ -11,7 +11,7 @@ const Login = ({ setLoginData } : Props) => {
     const navigate = useNavigate();
     const handleLogin = async (googleData : any) => {
         // post ggoogleData.profileObj into database 
-        const response =  await fetch('https://localhost:7137/api/Users', {
+        const response =  await fetch('https://recipe-backend.azurewebsites.net/api/Users', {
             method: 'POST',
             body: JSON.stringify({
                 name: googleData.profileObj.name,

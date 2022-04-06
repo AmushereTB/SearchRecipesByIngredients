@@ -67,7 +67,7 @@ const RecipeDetail = () => {
         e.preventDefault();
         let result : ILoginData = JSON.parse(localStorage.getItem('loginData') || "")
 
-        const response =  await fetch('https://localhost:7137/api/FavoriteRecipes', {
+        const response =  await fetch('https://recipe-backend.azurewebsites.net/api/FavoriteRecipes', {
             method: 'POST',
             body: JSON.stringify({
                 idMeal: id,
