@@ -22,7 +22,7 @@ const NavBar = ({loginData} : Props) => {
         <nav className="nav-container">
             <div className="nav-center">
                 <Link to="/">
-                    <h3>Project Name</h3>
+                    <h3>WhaTToPick</h3>
                 </Link>
                 <ul className="nav-links">
                     <li>
