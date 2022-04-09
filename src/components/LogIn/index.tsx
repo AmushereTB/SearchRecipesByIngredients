@@ -41,7 +41,7 @@ const Login = ({ setLoginData } : Props) => {
             <h1 className="section-title">Login With Google</h1>
             <GoogleLogin 
                 className="google-login"
-                clientId="348842152385-kdg8vkd6rnhvv07burv4pmune9ejalte.apps.googleusercontent.com"
+                clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID as string}
                 buttonText="Log in with Google"
                 onSuccess={handleLogin}
                 onFailure={handleFailure}
