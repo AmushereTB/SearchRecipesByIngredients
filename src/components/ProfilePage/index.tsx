@@ -28,7 +28,7 @@ const ProfilePage = ({loginInfo} : Props) => {
     },[]);
 
     const deleteRecipe = async (idMeal: string) : Promise<void> => {
-        await fetch(`https://recipe-backend.azurewebsites.net/api/FavoriteRecipes/${idMeal}`, {
+        await fetch(`https://recipe-backend.azurewebsites.net/api/FavoriteRecipes/${idMeal},${loginInfo?.googleId}`, {
             method: 'DELETE'
         });
         await fetchFavoriteRecipes();
