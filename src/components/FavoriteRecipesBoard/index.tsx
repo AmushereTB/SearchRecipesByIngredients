@@ -13,7 +13,6 @@ const RecipesBoard = ({ items, deleteRecipe } : Props) => {
         <section className="section">
             <h2 className="section-title">Favorite List</h2>
             
-            {/*<p>number of Recipes: {items.length}</p>*/}
             <div className="recipe-list">
                 { items.map(item => {
                         return <FavoriteRecipe key={item.idMeal} item={item} onDelete={deleteRecipe} />

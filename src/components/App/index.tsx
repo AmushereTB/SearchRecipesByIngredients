@@ -8,7 +8,6 @@ import ProfilePage from "../ProfilePage";
 import {ILoginData} from "../../Interfaces";
 
 const App = () => {
-    // const user = true;
     const [loginData, setLoginData] = useState<ILoginData>();
 
     return (
