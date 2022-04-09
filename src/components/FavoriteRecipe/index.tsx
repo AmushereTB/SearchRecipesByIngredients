@@ -1,5 +1,4 @@
 import React from 'react';
-// import {Props} from "../../Interfaces";
 import './FavoriteRecipe.css'
 import {Link} from "react-router-dom";
 import {IRecipes} from "../../Interfaces";

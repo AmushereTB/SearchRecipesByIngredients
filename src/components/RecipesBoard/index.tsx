@@ -12,7 +12,6 @@ const RecipesBoard = ({ items } : Props) => {
         <section className="section">
             <h2 className="section-title">Recipes</h2>
             
-            {/*<p>number of Recipes: {items.length}</p>*/}
             <div className="recipe-list">
                 { items.map(item => {
                         return <Recipe key={item.idMeal} item={item} />

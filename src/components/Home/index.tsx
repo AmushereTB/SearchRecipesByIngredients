@@ -12,13 +12,13 @@ function Home() {
     
     const fetchRecipes = useCallback(async () => {
         if (searchTermOne === "" && searchTermTwo === "" && searchTermThree === ""){
-            url = "https://lastprojectapifood.azurewebsites.net/api/Recipes/ingredients";
+            url = "https://recipe-backend.azurewebsites.net/api/Recipes/ingredients";
         }else if (searchTermTwo === "" && searchTermThree === "") {
-            url = `https://lastprojectapifood.azurewebsites.net/api/Recipes/ingredients?searchByIngredient=${searchTermOne}`;
+            url = `https://recipe-backend.azurewebsites.net/api/Recipes/ingredients?searchByIngredient=${searchTermOne}`;
         }else if (searchTermThree === ""){
-            url = `https://lastprojectapifood.azurewebsites.net/api/Recipes/ingredients?searchByIngredient=${searchTermOne}&searchByIngredient2=${searchTermTwo}`;
+            url = `https://recipe-backend.azurewebsites.net/api/Recipes/ingredients?searchByIngredient=${searchTermOne}&searchByIngredient2=${searchTermTwo}`;
         }else{
-            url = `https://lastprojectapifood.azurewebsites.net/api/Recipes/ingredients?searchByIngredient=${searchTermOne}&searchByIngredient2=${searchTermTwo}&searchByIngredient3=${searchTermThree}`;
+            url = `https://recipe-backend.azurewebsites.net/api/Recipes/ingredients?searchByIngredient=${searchTermOne}&searchByIngredient2=${searchTermTwo}&searchByIngredient3=${searchTermThree}`;
         }
         const response = await fetch(url);
         const data = await response.json();
