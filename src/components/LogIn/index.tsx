@@ -10,9 +10,10 @@ interface Props {
 
 const Login = ({ setLoginData } : Props) => {
     const navigate = useNavigate();
+    const [redirect, setRedirect] = useState(false);
     const handleLogin = async (googleData : any) => {
         // post ggoogleData.profileObj into database 
-
+        setRedirect(true);
         const res = await fetch(`https://recipe-backend.azurewebsites.net/api/Users/${googleData.profileObj.googleId}`);
         if (res.status === 404)
         {
@@ -28,7 +29,6 @@ const Login = ({ setLoginData } : Props) => {
                 },
             });
         }
-        
         setLoginData(googleData.profileObj);
         localStorage.setItem('loginData', JSON.stringify(googleData.profileObj));
         navigate("/");
@@ -38,7 +38,11 @@ const Login = ({ setLoginData } : Props) => {
     }
     return (
         <div className="section login">
-            <h1 className="section-title">Login With Google</h1>
+            <h1 className="section-title">
+                {
+                    redirect ?  <span className="login_message">Logging in, please wait..</span> : <span>Login With Google</span>
+                }
+            </h1>
             <GoogleLogin 
                 className="google-login"
                 clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID as string}

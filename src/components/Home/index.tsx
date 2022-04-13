@@ -2,6 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import RecipesBoard from "../RecipesBoard";
 import {IRecipes} from "../../Interfaces";
 import SearchForm from "../SearchForm";
+import Loading from "../Loading";
 
 function Home() {
     const [recipeList, setRecipeList] = useState<IRecipes[]>([]);
@@ -39,7 +40,9 @@ function Home() {
     return (
         <main>
             <SearchForm setSearchTermOne={setSearchTermOne} setSearchTermTwo={setSearchTermTwo} setSearchTermThree={setSearchTermThree} />
-            <RecipesBoard items={recipeList} />
+            {
+                recipeList.length == 0 ? <Loading /> : <RecipesBoard items={recipeList} />
+            }
         </main>
     );
 }
